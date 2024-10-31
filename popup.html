@@ -1,0 +1,65 @@
+<html>
+  <head>
+    <title>tabs deletor</title>
+    <script src="popup.js"></script>
+  </head>
+  <body>
+    <h1>tabs deletor</h1>
+
+    <div id="myDIV"></div>
+    <button id="checkAll">check all</button>
+    <button id="check">DELETE TABS</button>
+  </body>
+  <style>
+    .checkboxes {
+    }
+    #check:hover {
+      transform: scale(1.1);
+    }
+    #check {
+      transition: 0.2s;
+      border-radius: 3px;
+      padding: 5px;
+      margin-top: 10px;
+    }
+
+    label {
+      word-break: break-word;
+    }
+    .divt {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      margin: 3px;
+    }
+
+    input[type="checkbox"]:focus {
+      outline: max(2px, 0.15em) solid black;
+      outline-offset: max(2px, 0.15em);
+    }
+
+    input[type="checkbox"] label {
+      outline: max(2px, 0.15em) solid black;
+      outline-offset: max(2px, 0.15em);
+    }
+    body {
+      display: flex;
+      width: 200px;
+      padding: 5px;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    #myDIV {
+      border: 4px solid black;
+      border-radius: 3px;
+
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      flex-direction: column;
+      margin: 2px;
+    }
+  </style>
+</html>
