@@ -9,8 +9,10 @@ function l() {
     var realsubdomain = [];
     var textArray = [];
     var checkButton = document.getElementById('check');
+    
 var checkAllButton = document.getElementById('checkAll');
-    chrome.tabs.getAllInWindow((tab) => {
+
+    chrome.tabs.query({}).then((tab) => {
         var ifShow = true;
         for (i in tab) {
             var text;
@@ -67,8 +69,9 @@ var checkAllButton = document.getElementById('checkAll');
 
         }
 
+    }
+    )
 
-    })
 
     function check(array, target) {
         for (i = 0; i < array.length; i++) {
@@ -103,7 +106,7 @@ var checkAllButton = document.getElementById('checkAll');
 
         checkcheckboxes();
 
-        chrome.tabs.getAllInWindow((tabs) => {
+        chrome.tabs.query({}).then((tabs) => {
 
             for (var i in tabs) {
 
