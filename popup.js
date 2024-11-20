@@ -9,6 +9,7 @@ function l() {
     var realsubdomain = [];
     var textArray = [];
     var checkButton = document.getElementById('check');
+    const timer = ms => new Promise(res => setTimeout(res, ms))
     
 var checkAllButton = document.getElementById('checkAll');
 
@@ -56,6 +57,7 @@ var checkAllButton = document.getElementById('checkAll');
                 checkbox.setAttribute("id", i);
                 para.innerHTML = text;
                 const div = document.createElement("div");
+                
                 div.setAttribute("id", b);
                 checkbox.classList.add("checkboxes");
                 div.classList.add("divt");
@@ -129,22 +131,24 @@ var checkAllButton = document.getElementById('checkAll');
                var tab = tabs;
                
                
-            function doSetTimeout(i, tab) {
-                setTimeout(function() { 
+            function closeIndividually(i, tab) 
+{if (checkSubdomain(realsubdomain[i])) {
+    console.log(tabs[i].id)
+    chrome.tabs.remove(tabs[i].id)
+    if(i===tab.length-1){
+        window.close();
+    }
+
+} }
                     
-                    if (checkSubdomain(realsubdomain[i])) {
-                    console.log(tabs[i].id)
-                    chrome.tabs.remove(tabs[i].id)
-                    if(i===tab.length-1){
-                        window.close();
-                    }
 
-                } }, 300);
-              }
+            async function closeTabs(){
+                for (var i = 0; i < tabs.length; i++){
+                    closeIndividually(i,tab);
+                    await timer(100);}
+            }
               
-              for (var i = 0; i < tabs.length; i++)
-                doSetTimeout(i,tab);
-
+closeTabs();
 
         
            function close(){

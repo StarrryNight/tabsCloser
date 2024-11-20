@@ -1,14 +1,16 @@
 <html>
   <head>
-    <title>tabs deletor</title>
+    <title>Tabs Closer</title>
     <script src="popup.js"></script>
   </head>
   <body>
+
     <h1>tabs deletor</h1>
 
     <div id="myDIV"></div>
     <button id="checkAll">check all</button>
     <button id="check">DELETE TABS</button>
+  
   </body>
   <style>
     .checkboxes {
@@ -28,7 +30,7 @@
     }
     .divt {
       display: flex;
-      justify-content: space-between;
+      justify-content: left;
       align-items: center;
 
       margin: 3px;
@@ -47,19 +49,25 @@
       display: flex;
       width: 200px;
       padding: 5px;
-      justify-content: center;
+      justify-content: left;
       align-items: center;
       flex-direction: column;
+      border: solid;
     }
     #myDIV {
       border: 4px solid black;
       border-radius: 3px;
 
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      flex-direction: column;
+      display: block;
       margin: 2px;
+    }
+
+    .mainContainer{
+      border: 3px;
+    }
+
+    #checkAll{
+      margin-top: 10px;
     }
   </style>
 </html>

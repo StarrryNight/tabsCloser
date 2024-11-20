@@ -4,11 +4,10 @@
     "description": "close tabs",
     "version": "1.0",
     "action": {
-        "default_icon": "image1.png",
         "default_popup": "popup.html"
     },
     "permissions": [
-        "activeTab",
+
         "tabs",
         "scripting"
         
